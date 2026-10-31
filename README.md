@@ -10,8 +10,6 @@
   <img src="https://img.shields.io/badge/Domain-Quantitative%20Finance-1f6feb" alt="Quantitative Finance"/>
   <img src="https://img.shields.io/badge/Focus-Time%20Series%20Analysis-8A2BE2" alt="Time Series"/>
   <img src="https://img.shields.io/badge/Models-Econometrics%20%7C%20ML%20%7C%20DL-orange" alt="Models"/>
-  <img src="https://img.shields.io/badge/Status-Actively%20Developing-success" alt="Status"/>
-  <img src="https://img.shields.io/badge/License-To%20Be%20Specified-lightgrey" alt="License"/>
 </p>
 
 ---
