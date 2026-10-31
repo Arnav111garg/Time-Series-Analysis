@@ -213,31 +213,6 @@ This section explores conditional heteroskedasticity and the statistical methodo
 - Long-run unconditional variance.
 - One-step and multi-step volatility forecasting.
 
-**Core formulation — GARCH(1,1):**
-
-\[
-r_t = \mu + \epsilon_t
-\]
-
-\[
-\epsilon_t = \sigma_t z_t
-\]
-
-\[
-\sigma_t^2 =
-\omega+\alpha\epsilon_{t-1}^2+
-\beta\sigma_{t-1}^2
-\]
-
-Where:
-
-- \(\omega\) represents the baseline variance component.
-- \(\alpha\) captures the impact of recent squared innovations.
-- \(\beta\) captures volatility persistence.
-- \(z_t\) represents a standardized innovation.
-
-**Financial relevance:** Modelling conditional volatility, forecasting financial risk, and understanding the persistence of market uncertainty.
-
 #### Module 09 — EGARCH, GJR-GARCH & Asymmetric Volatility Models
 
 Explores the asymmetric response of financial volatility to positive and negative market shocks.
@@ -269,26 +244,6 @@ Topics covered:
 - HAR-RV estimation.
 - Volatility forecasting.
 - Forecast evaluation.
-
-**Core formulation — HAR-RV:**
-
-\[
-RV_{t+1} =
-\beta_0+
-\beta_d RV_t+
-\beta_w RV_t^{(w)}+
-\beta_m RV_t^{(m)}
-+\epsilon_{t+1}
-\]
-
-Where:
-
-- \(RV_t\) represents daily realized volatility.
-- \(RV_t^{(w)}\) represents weekly realized volatility.
-- \(RV_t^{(m)}\) represents monthly realized volatility.
-
-**Financial relevance:** Modelling volatility across multiple time horizons and exploring the heterogeneous nature of volatility dynamics.
-
 ---
 
 ### PART IV — MULTIVARIATE ECONOMETRICS & DYNAMIC SYSTEMS
@@ -457,59 +412,6 @@ The module explores a systematic Volatility Risk Premium (VRP) strategy using vo
    - Portfolio performance evaluation.
    - Risk and performance analysis.
 
-**Conceptual strategy workflow:**
-
-\[
-\text{Financial Market Data}
-\]
-
-\[
-\downarrow
-\]
-
-\[
-\text{Rolling GARCH Forecast}
-\]
-
-\[
-\downarrow
-\]
-
-\[
-\text{Implied vs. Forecast Volatility}
-\]
-
-\[
-\downarrow
-\]
-
-\[
-\text{Volatility Premium Signal}
-\]
-
-\[
-\downarrow
-\]
-
-\[
-\text{HMM Regime Probabilities}
-\]
-
-\[
-\downarrow
-\]
-
-\[
-\text{Dynamic Exposure and Hedging}
-\]
-
-\[
-\downarrow
-\]
-
-\[
-\text{Transaction-Cost-Aware Backtesting}
-\]
 
 **Research motivation:**
 
@@ -676,14 +578,6 @@ Depending on the modelling problem, the workflow may involve:
 - Feature construction.
 - Rolling-window transformations.
 
-For example, continuously compounded returns can be calculated as:
-
-\[
-r_t = \ln\left(\frac{P_t}{P_{t-1}}\right)
-\]
-
-Where \(P_t\) represents the asset price at time \(t\).
-
 ### 4.2 Statistical Model Identification
 
 Before estimating a model, its assumptions and the statistical properties of the data must be examined.
@@ -841,6 +735,8 @@ Time-Series-Analysis/
 ├── Module 24 - Extreme Value Theory and Tail Risk in Time Series/
 │
 ├── Module 25 - Bayesian Time Series Analysis/
+│
+├── Module 26 - Reinforcement Learning for Time Series and Automated Trading/
 │
 ├── Module 27 - Time Series Cross-Validation and Rigorous Backtesting/
 │
