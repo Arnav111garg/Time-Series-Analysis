@@ -1,19 +1,23 @@
 # Time-Series-Analysis
-A practitioner-focused Python codebase accompanying [_Time Series Analysis: The Complete Practitioner's Guide for Quantitative Finance_](https://drive.google.com/drive/folders/1wGcP0FED5fF7vCwqmzfMTSj2s4ngRGzo). This repository bridges classical econometric theory with advanced quantitative finance and algorithmic trading strategies.
+A practitioner-focused Python codebase designed for quantitative finance and algorithmic trading. This repository bridges classical econometric theory with advanced quantitative modeling, deep learning architectures, and systematic strategy backtesting.
 
-Core Modules & Architecture
----------------------------
+Repository Architecture & Core Modules
+--------------------------------------
 
-*   **Foundations & Linear Models:** Classical STL decomposition, stationarity tests (ADF, KPSS, Phillips-Perron, Zivot-Andrews), ARMA/ARIMA modeling, and Box-Jenkins diagnostics.
+*   **Foundations & Stationarity:** Classical STL decomposition, log-return transformations, and comprehensive unit root testing including ADF, Phillips–Perron, KPSS, and Zivot–Andrews tests to model structural breaks.
     
-*   **Volatility Dynamics:** Clustering, GARCH family models (EGARCH, GJR-GARCH), Realized Volatility (HAR-RV), and Dynamic Conditional Correlation (DCC-GARCH).
+*   **Linear Time Series & Diagnostics:** Complete Box–Jenkins methodology (identification via ACF/PACF/EACF, information criteria AIC/BIC/HQC, Ljung–Box and BDS white noise tests) covering AR, MA, ARMA, ARIMA, and Seasonal ARIMA (SARIMA) formulations.
     
-*   **Multivariate & State-Space:** Vector Autoregressions (VAR), Engle-Granger and Johansen cointegration, Vector Error Correction Models (VECM), Kalman Filters, and Hidden Markov Models (HMM) for regime identification.
+*   **Volatility Dynamics & High-Frequency:** Stylized return facts, asymmetric GARCH models (GJR-GARCH, EGARCH, APARCH), dynamic conditional correlations (DCC-GARCH), realized volatility modeling via HAR-RV, Roll bid-ask spread estimators, intraday U-shape volatility patterns, and self-exciting Hawkes point processes for trade arrival clustering.
     
-*   **Advanced Quant & High-Frequency:** Nonlinear SETAR/STAR threshold models, Hawkes point processes, Amihud illiquidity, VPIN toxicity metrics, and Deep Learning (LSTMs, Temporal Fusion Transformers).
+*   **Multivariate & State-Space Systems:** Structural Vector Autoregressions (VAR), Engle–Granger two-step and Johansen cointegration tests, Vector Error Correction Models (VECM), Toda–Yamamoto Granger causality, dynamic Kalman filtering for time-varying betas and hedge ratios, and Hidden Markov Models (HMM) for regime classification via Baum–Welch and Viterbi algorithms.
+    
+*   **Nonlinear & Advanced Quant Models:** Threshold models including SETAR and ESTAR/LSTAR smooth transition dynamics for transaction-cost bands, Copulas (Gaussian, Student-t, Archimedean, Vine) for tail-dependence modeling, Extreme Value Theory (GEV, POT/GPD), ARFIMA fractional integration, dynamic factor models, and Bayesian structural time series (BSTS).
+    
+*   **Machine Learning & Deep Learning:** Feature engineering pipelines, gradient boosting return forecasters, LSTMs, Temporal Fusion Transformers (TFT), and Reinforcement Learning (DQN, PPO) tailored for automated trading.
     
 
-End-to-End Case Study
----------------------
+Comprehensive Strategy Implementation
+-------------------------------------
 
-Includes an institutional-grade Volatility Risk Premium (VRP) harvesting strategy that integrates rolling GARCH forecasts, VIX implied volatility spreads, and 3-state HMM regime filtering to dynamically size short-volatility and equity hedge positions.
+The codebase features an institutional-grade Volatility Risk Premium (VRP) harvesting backtest (Module 18). The strategy fits rolling GARCH(1,1) models on SPY to forecast 1-day ahead conditional realized volatility, measures the spread against VIX implied volatility, and filters execution through a 3-state Gaussian HMM. Positions in short-volatility assets (VXX) and dynamic SPY equity hedges are sized dynamically according to posterior regime probabilities and z-score thresholds, taking into account realistic 10 bps transaction costs.
